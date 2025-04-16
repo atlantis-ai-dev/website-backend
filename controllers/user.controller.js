@@ -17,7 +17,9 @@ const getAllUser = async (req, res) => {
         fullName: `${user.first_name} ${user.last_name}`,
         email: user.email,
         createdAt: user.created_at,
-        lastModifiedAt: user.last_modified_at
+        lastModifiedAt: user.last_modified_at,
+        isVerified: user.is_verified,
+        emailToken: user.email_token
       }))
     });
   } catch (error) {
@@ -49,7 +51,9 @@ const getUserByEmail = async (req, res) => {
         fullName: `${user.first_name} ${user.last_name}`,
         email: user.email,
         createdAt: user.created_at,
-        lastModifiedAt: user.last_modified_at
+        lastModifiedAt: user.last_modified_at,
+        isVerified: user.is_verified,
+        emailToken: user.email_token
       }
     });
   } catch (error) {
@@ -77,7 +81,9 @@ const getUser = async (req, res) => {
         fullName: `${user.first_name} ${user.last_name}`,
         email: user.email,
         createdAt: user.created_at,
-        lastModifiedAt: user.last_modified_at
+        lastModifiedAt: user.last_modified_at,
+        isVerified: user.is_verified,
+        emailToken: user.email_token
       }
     });
   } catch (error) {
