@@ -62,7 +62,7 @@ const registerUser = async (req, res) => {
       });
   
       logger.info(response);
-      return response;
+      return res.status(200).json(response);
     } catch (error) {
       await client.query('ROLLBACK');
       logger.error(error);

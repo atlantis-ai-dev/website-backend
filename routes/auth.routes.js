@@ -5,7 +5,7 @@ const responseParser = require("../utils/responseParser");
 
 const router = express.Router();
 
-router.post( "/register", validateUserRegistration, responseParser(registerUser) );
+router.post( "/register", validateUserRegistration, registerUser);
 router.post( "/login", validateUserLogin, login);
 router.post( "/verify-email", responseParser(sendVerificationEmail));
 router.get( "/confirm-email", responseParser(verifyEmail));
