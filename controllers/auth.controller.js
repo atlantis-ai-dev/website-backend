@@ -48,7 +48,7 @@ const registerUser = async (req, res) => {
         }
       };
 
-      const verificationUrl = `${process.env.FRONTEND_URL}/api/auth/confirm-email?token=${user.email_token}`;
+      const verificationUrl = `${process.env.FRONTEND_URL}/verifyemailtoken?token=${user.email_token}`;
 
       const html = getVerificationEmailHTML({
         name: user.first_name,
@@ -100,7 +100,8 @@ const registerUser = async (req, res) => {
         data: {
           id: user.id,
           email: user.email,
-          username: user.username
+          username: user.username,
+          isVerified: user.is_verified
         }
       };
   
@@ -134,7 +135,7 @@ const registerUser = async (req, res) => {
         };
       }
   
-      const verificationUrl = `${process.env.FRONTEND_URL}/api/auth/confirm-email?token=${user.email_token}`;
+      const verificationUrl = `${process.env.FRONTEND_URL}/verifyemailtoken?token=${user.email_token}`;
       const html = getVerificationEmailHTML({
         name: user.first_name,
         url: verificationUrl
