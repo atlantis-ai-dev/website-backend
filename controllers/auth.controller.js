@@ -55,7 +55,7 @@ const registerUser = async (req, res) => {
         url: verificationUrl
       });
       await resend.emails.send({
-        from: 'verify@atlantisai.com',
+        from: 'verify@theatlantisai.com',
         to: user.email,
         subject: 'Verify your email at Atlantis AI',
         html
@@ -142,7 +142,7 @@ const registerUser = async (req, res) => {
       });
 
       await resend.emails.send({
-        from: 'verify@atlantisai.com',
+        from: 'verify@theatlantisai.com',
         to: email,
         subject: 'Verify your email at Atlantis AI',
         html
